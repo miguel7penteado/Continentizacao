@@ -1,6 +1,12 @@
 # Utilização de `Containers` em Sistemas Operacionais 
 
-## Evoluindo a técnica de virtualização, segue o uso de containers
+# Evoluindo a técnica de virtualização, segue o uso de containers
+
+# Utilizando Containers em Sistemas Operacionais Linux
+
+## Requisitos do kernel do Sistema Operacional
+
+## Isolamento ao nível de processos
 
 ### Instalação de requisitos para containers `docker` no Linux Debian, Ubunto e Devuan
 
@@ -54,6 +60,12 @@ docker run --name portainer -d \
 -v /var/run/docker.sock:/var/run/docker.sock \
 -v portainer_data:/data portainer/portainer
 ```
+
+# Utilizando Containers em Sistemas Operacionais Windows
+
+## Isolamento ao nível de processos
+
+## Requisitos do kernel do Sistema Operacional
 
 
 
