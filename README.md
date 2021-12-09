@@ -67,5 +67,18 @@ docker run --name portainer -d \
 
 ## Requisitos do kernel do Sistema Operacional
 
+## Baixando imagens para uso de containers
+
+```cmd
+ver
+```
+
+```cmd
+docker pull mcr.microsoft.com/windows/nanoserver:10.0.19042.1348
+```
+
+```cmd
+docker pull mcr.microsoft.com/windows/servercore:10.0.19042.1348
+```
 
 
