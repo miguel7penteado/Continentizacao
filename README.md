@@ -123,10 +123,13 @@ Expand-Archive .\Debian.zip .\Debian
 move Debian %USERPROFILE%\images\
 cd %USERPROFILE%\images\
 ```
-Obtenha 
-```cmd
-powershell $userenv = [System.Environment]::GetEnvironmentVariable("Path", "User")
-powershell  [System.Environment]::SetEnvironmentVariable("PATH", $userenv + ";%USERPROFILE%\images\Debian", "User")
+Obtenha o PATH do usuário que está executando este procedimento
+```powershell
+$userenv = [System.Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::User)
+```
+Agora insira na variável de ambiente PATH o caminho de instalação da sua distribuição
+```powershell
+[System.Environment]::SetEnvironmentVariable("PATH", $userenv + ";%USERPROFILE%\images\Debian", [System.EnvironmentVariableTarget]::User)
 ```
 
 ## Baixando imagens "windows" para uso de containers "windows"
