@@ -100,19 +100,28 @@ Baixando pelo DOS/CMD
 ```cmd
 mkdir %USERPROFILE%\images
 cd    %USERPROFILE%\images
+mkdir %tmp%\download1
+cd    %tmp%\download1
 curl.exe -L -o Debian.appx  https://aka.ms/wsl-debian-gnulinux
+
 ```
 Baixando pelo powershell
 ```powershell
 mkdir %USERPROFILE%\images
 cd    %USERPROFILE%\images
-Invoke-WebRequest -Uri  https://aka.ms/wsl-debian-gnulinux -OutFile Debian.appx -UseBasicParsing
+Invoke-WebRequest -Uri  https://aka.ms/wsl-debian-gnulinux -OutFile PacotaoDebian.appx -UseBasicParsing
 ```
 
 Descompacte o arquivo baixado em alguma pasta que você escolhe para armazenar a Debian
 ```powershell
+Rename-Item .\PacotaoDebian.appx .\PacotaoDebian.zip
+Expand-Archive .\PacotaoDebian.zip .\PacotaoDebian
+cd PacotaoDebian
+# procure por DistroLauncher-Appx_1.11.1.0_x64.appx
 Rename-Item .\Debian.appx .\Debian.zip
 Expand-Archive .\Debian.zip .\Debian
+move Debian %USERPROFILE%\images\
+cd %USERPROFILE%\images\
 ```
 Obtenha 
 ```cmd
