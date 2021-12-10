@@ -81,6 +81,10 @@ Agora torne padrão a versão 2 do subsistema Linux do Windows para rodar qualqu
 ```
 wsl --set-default-version 2
 ```
+Baixando imagem do Debian
+```cmd
+powershell Invoke-WebRequest -Uri  https://aka.ms/wsl-debian-gnulinux -OutFile Debian.appx -UseBasicParsing
+```
 
 
 ## Baixando imagens para uso de containers
