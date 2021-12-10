@@ -67,6 +67,22 @@ docker run --name portainer -d \
 
 ## Requisitos do kernel do Sistema Operacional
 
+## Ativando os requisitos nativos do windows 10 atualização 21h2
+
+Precisamos ativar/ativar o subsistema Linux do Windows
+```
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+```
+Agora ative todo o recurso de virtualização presente no Windows 10
+```
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+```
+Agora torne padrão a versão 2 do subsistema Linux do Windows para rodar qualquer imagem do Linux que você tenha instalado
+```
+wsl --set-default-version 2
+```
+
+
 ## Baixando imagens para uso de containers
 
 ```cmd
