@@ -81,13 +81,46 @@ Agora torne padrão a versão 2 do subsistema Linux do Windows para rodar qualqu
 ```
 wsl --set-default-version 2
 ```
-Baixando imagem do Debian
+
+## Baixando imagens "Linux" para uso de containers "Linux"
+
+### Método nutella
 ```cmd
-powershell Invoke-WebRequest -Uri  https://aka.ms/wsl-debian-gnulinux -OutFile Debian.appx -UseBasicParsing
+curl.exe -L -o Debian.appx  https://aka.ms/wsl-debian-gnulinux
+```
+Descompacte o arquivo baixado em alguma pasta que você escolhe para armazenar a Debian
+```cmd
+powershell Add-AppxPackage .\Debian.appx
 ```
 
+### Método raiz
+Baixando imagem do Debian
 
-## Baixando imagens para uso de containers
+Baixando pelo DOS/CMD
+```cmd
+mkdir %USERPROFILE%\images
+cd    %USERPROFILE%\images
+curl.exe -L -o Debian.appx  https://aka.ms/wsl-debian-gnulinux
+```
+Baixando pelo powershell
+```powershell
+mkdir %USERPROFILE%\images
+cd    %USERPROFILE%\images
+Invoke-WebRequest -Uri  https://aka.ms/wsl-debian-gnulinux -OutFile Debian.appx -UseBasicParsing
+```
+
+Descompacte o arquivo baixado em alguma pasta que você escolhe para armazenar a Debian
+```powershell
+Rename-Item .\Debian.appx .\Debian.zip
+Expand-Archive .\Debian.zip .\Debian
+```
+Obtenha 
+```cmd
+powershell $userenv = [System.Environment]::GetEnvironmentVariable("Path", "User")
+powershell  [System.Environment]::SetEnvironmentVariable("PATH", $userenv + ";%USERPROFILE%\images\Debian", "User")
+```
+
+## Baixando imagens "windows" para uso de containers "windows"
 
 ```cmd
 ver
