@@ -104,6 +104,17 @@ Descompacte o arquivo baixado em alguma pasta que você escolhe para armazenar a
 powershell Add-AppxPackage .\Debian.appx
 ```
 
+Atualize os componentes do Subsistema Linux do Windows antes de iniciar
+```cmd
+wsl --update
+;Verificando atualizações...
+;Baixando atualizações...
+;Instalando atualizações...
+;Esta alteração entrará em vigor na próxima reinicialização completa do WSL. Para forçar uma reinicialização, execute "wsl -shutdown".
+;Versão do kernel: 5.10.60.1
+```
+
+
 ### Método raiz
 Baixando imagem do Debian
 
