@@ -131,7 +131,17 @@ Debian.exe
 ;passwd: password updated successfully
 ;Installation successful!
 ```
-
+Você irá se deparar com o terminal do Linux. Use-o. Para sair, basta digitar exit
+#### Observação
+Só para você saber: neste método padrão, sua imagem baixada do linux irá ficar 
+na pasta **C:\Program Files\WindowsApps\ **.
+O pacote instala imagens para várias arquiteturas, então são criadas pastas começando
+com o nome **TheDebianProject.DebianGNULinux_alguma_coisa** acrescentado da versão e da arquitetura e um
+hash no final. Por exemplo, a minha instalação ficou em:
+```cmd
+C:\Program Files\WindowsApps\TheDebianProject.DebianGNULinux_1.11.1.0_x64__76v4gfsz19hv4\
+```
+Então, seus pacotes da instalação serão armazenados aqui.
 
 ### Método raiz
 Baixando imagem do Debian
