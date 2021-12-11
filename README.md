@@ -122,6 +122,14 @@ wsl --shutdown
 Finalmente execute a primeira inicialização da sua imagem Debian baixada
 ```cmd
 Debian.exe
+;Installing, this may take a few minutes...
+;Please create a default UNIX user account. The username does not need to match your Windows username.
+;For more information visit: https://aka.ms/wslusers
+;Enter new UNIX username: (coloque aqui um nome de usuário que pode ser o seu do windows mesmo)
+;New password:
+;Retype new password:
+;passwd: password updated successfully
+;Installation successful!
 ```
 
 
