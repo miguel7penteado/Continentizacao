@@ -84,6 +84,17 @@ wsl --set-default-version 2
 
 ## Baixando imagens "Linux" para uso de containers "Linux"
 
+### Opcional - Tendo acesso a pasta de aplicativos do Windows 10
+Abra uma janela do terminal como administrador e execute os seguintes comandos
+```cmd
+takeown /F "%ProgramFiles%\WindowsApps"
+takeown /F "%ProgramFiles%\WindowsApps" /r /d y
+icacls "%ProgramFiles%\WindowsApps" /grant Administradores:F
+icacls "%ProgramFiles%\WindowsApps" /grant Administradores:F /t
+icacls "%ProgramFiles%\WindowsApps" /setowner "NT Service\TrustedInstaller"
+```
+
+
 ### Método nutella
 ```cmd
 curl.exe -L -o Debian.appx  https://aka.ms/wsl-debian-gnulinux
