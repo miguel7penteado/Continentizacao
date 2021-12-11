@@ -110,8 +110,18 @@ wsl --update
 ;Verificando atualizações...
 ;Baixando atualizações...
 ;Instalando atualizações...
-;Esta alteração entrará em vigor na próxima reinicialização completa do WSL. Para forçar uma reinicialização, execute "wsl -shutdown".
+;Esta alteração entrará em vigor na próxima reinicialização completa do WSL. Para forçar uma reinicialização, execute "wsl --shutdown".
 ;Versão do kernel: 5.10.60.1
+```
+
+Reinicie o Subsistema Linux do Windows
+```cmd
+wsl --shutdown
+```
+
+Finalmente execute a primeira inicialização da sua imagem Debian baixada
+```cmd
+Debian.exe
 ```
 
 
