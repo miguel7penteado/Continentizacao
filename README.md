@@ -132,8 +132,10 @@ Debian.exe
 ;Installation successful!
 ```
 Você irá se deparar com o terminal do Linux. Use-o. Para sair, basta digitar exit
-#### Observação
-Só para você saber: neste método padrão, sua imagem baixada do linux irá ficar 
+
+#### Observação - Instaladores criados pelo pacote que você baixou
+
+Só para você saber: neste método padrão, sua o pacote do linux irá gerar instaladores
 na pasta **C:\Program Files\WindowsApps\ **.
 O pacote instala imagens para várias arquiteturas, então são criadas pastas começando
 com o nome **TheDebianProject.DebianGNULinux_alguma_coisa** acrescentado da versão e da arquitetura e um
@@ -141,7 +143,18 @@ hash no final. Por exemplo, a minha instalação ficou em:
 ```cmd
 C:\Program Files\WindowsApps\TheDebianProject.DebianGNULinux_1.11.1.0_x64__76v4gfsz19hv4\
 ```
-Então, seus pacotes da instalação serão armazenados aqui.
+
+#### Observação - O local de sua instalação:
+O local de uma instalção normalmente fica no diretório **%userprofile%\AppData\Local\Packages**. O caminho completo de cada instalação você encontra executando o seguinte comando dentro do powershell:
+```powershell
+(Get-ChildItem HKCU:\Software\Microsoft\Windows\CurrentVersion\Lxss | ForEach-Object {Get-ItemProperty $_.PSPath}) | select DistributionName, @{n="Path";e={$_.BasePath + "\rootfs"}}
+```
+Dentro do caminho você vai encontrar um disco VHDX chamado **ext4.vhdx**. 
+
+#### Acessando o wsl via rede pelo explorer
+```cmd
+\\wsl$\Debian
+```
 
 ### Método raiz
 Baixando imagem do Debian
